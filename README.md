@@ -1,5 +1,8 @@
 # Inmana
 
+Inventory Management (InMana) application done within NLW#5 by Rocketseat in Elixir trail.
+
+## How to run
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
