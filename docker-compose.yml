@@ -4,8 +4,14 @@ services:
     postgres:
         image: postgres
         container_name: inamana_db
+        hostname: inamana_db
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
         ports:
             - 5432:5432
         environment:
-            POSTGRES_PASSWORD: postgres
-            POSTGRES_USER: postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_USER=postgres
+
+volumes:
+    postgres_data:
