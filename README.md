@@ -2,6 +2,17 @@
 
 Inventory Management (InMana) application done within NLW#5 by Rocketseat in Elixir trail.
 
+The app should:
+
+- Be able to register restaurants and supplies;
+
+- Be able to visualize information about the supplies;
+
+- Generate a list of supplies that are about to expire weekly for each restaurant;
+
+- The list should be sent to the restaurant email.
+
+
 ## How to run
 To start your Phoenix server:
 
