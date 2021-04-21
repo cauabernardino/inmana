@@ -2,17 +2,17 @@ defmodule InmanaWeb.Router do
   use InmanaWeb, :router
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug(:accepts, ["json"])
   end
 
   scope "/api", InmanaWeb do
-    pipe_through :api
+    pipe_through(:api)
 
-    get "/", WelcomeController, :index
+    get("/", WelcomeController, :index)
 
-    post "/restaurants", RestaurantsController, :create
+    resources("/restaurants", RestaurantsController, only: [:create, :index])
 
-    resources "/supplies", SuppliesController, only: [:create, :show, :index]
+    resources("/supplies", SuppliesController, only: [:create, :index, :show])
   end
 
   # Enables LiveDashboard only for development
@@ -26,12 +26,12 @@ defmodule InmanaWeb.Router do
     import Phoenix.LiveDashboard.Router
 
     scope "/" do
-      pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: InmanaWeb.Telemetry
+      pipe_through([:fetch_session, :protect_from_forgery])
+      live_dashboard("/dashboard", metrics: InmanaWeb.Telemetry)
     end
   end
 
   if Mix.env() == :dev do
-    forward "/sent_emails", Bamboo.SentEmailViewerPlug
+    forward("/sent_emails", Bamboo.SentEmailViewerPlug)
   end
 end
