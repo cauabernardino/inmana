@@ -21,4 +21,12 @@ defmodule InmanaWeb.SuppliesController do
       |> render("show.json", supply: supply)
     end
   end
+
+  def index(conn, _params) do
+    with {:ok, [%Supply{} | _tails] = supplies} <- Inmana.get_supplies() do
+      conn
+      |> put_status(:ok)
+      |> render("index.json", supplies: supplies)
+    end
+  end
 end
