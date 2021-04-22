@@ -13,12 +13,46 @@ The app should:
 - The list should be sent to the restaurant email.
 
 
-## How to run
-To start your Phoenix server:
+## Techs
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server`
+- Elixir
+- Phoenix Framework
+- PostgreSQL
+- Docker and Docker Compose
+
+## How to run
+
+1. Clone the repo and enter into it:
+
+```bash
+git clone https://github.com/cauabernardino/inmana.git`
+cd inmana
+```
+
+2. To handle the database:
+
+```bash
+# Download the image (first time) and (re)create the container
+docker-compose up -d
+
+# Start and stop the container without deleting
+docker-compose start
+docker-compose stop
+
+# Delete/restart the container 
+docker-compose down -v
+```
+
+3. To start the Phoenix server:
+
+```bash
+# Install dependencies 
+mix deps.get
+# Create and migrate your database
+mix ecto.setup
+# Start Phoenix endpoint
+mix phx.server
+```
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
