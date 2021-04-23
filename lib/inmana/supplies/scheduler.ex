@@ -25,8 +25,8 @@ defmodule Inmana.Supplies.Scheduler do
   end
 
   defp schedule_notification do
-    # Select time (10 sec for debug or a week for prod)
-    Process.send_after(self(), :generate, 1000 * 10)
+    # Select time (30 sec for debug or a week for prod)
+    Process.send_after(self(), :generate, 1000 * 30)
     # Process.send_after(self(), :generate, 1000 * 60 * 60 * 24 * 7)
   end
 end
