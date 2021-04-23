@@ -25,7 +25,7 @@ The app should:
 1. Clone the repo and enter into it:
 
 ```bash
-git clone https://github.com/cauabernardino/inmana.git`
+git clone https://github.com/cauabernardino/inmana.git
 cd inmana
 ```
 
